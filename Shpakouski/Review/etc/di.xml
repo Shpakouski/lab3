@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Shpakouski\Review\Api\ReviewRepositoryInterface" type="Shpakouski\Review\Model\ReviewRepository"/>
+    <preference for="Shpakouski\Review\Api\Data\ReviewInterface" type="Shpakouski\Review\Model\Data\Review"/>
+    <preference for="Shpakouski\Review\Api\Data\ReviewSearchResultsInterface"
+                type="Magento\Framework\Api\SearchResults"/>
+</config>

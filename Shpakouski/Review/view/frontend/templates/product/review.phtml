@@ -1,0 +1,115 @@
+<?php
+/**
+ * @var $block \Shpakouski\Review\Block\Product\Review
+ */
+?>
+<div>
+    <?php foreach ($block->getReviews() as $review):
+        if ($review['review_product'] == $block->getProductName()):
+            ?>
+            <h5>Text Review</h5>
+            <div>
+                <?php echo $review['review_content']; ?>
+            </div>
+            <h5>Rating Comfort</h5>
+            <div>
+                <?php echo $review['rating_comfort']; ?>
+            </div>
+            <h5>Rating Price/Quality</h5>
+            <div>
+                <?php echo $review['rating_price_quality']; ?>
+            </div>
+            </br>
+            </br>
+            <a href="<?php echo $block->getBaseUrl() . 'customer/customer/allreviews'; ?>">Links to all reviews of this
+                customer</a>
+            </br>
+            <a href="<?php echo $block->getUrl('goods/goods/allreviews', ['param' => $block->getProductName()]); ?>">Links
+                to all reviews for this product</a>
+            <hr>
+            <hr></br>
+            </br>
+        <?php
+        endif;
+    endforeach; ?>
+</div>
+<form class="" action="<?php echo $block->getBaseUrl() . 'handler/product/post'; ?>" id="review-form" method="post">
+    <fieldset class="fieldset">
+        <legend class="legend"><span>Review Form</span></legend>
+        <br>
+        <div class="field note no-label">Write here your experience.</div>
+        <div class="field rating-comfort">
+            <label class="label" for="rating-comfort"><span>Rating Comfort</span></label>
+            <div class="control">
+                <input type="radio" name="rating_comfort" id="r1" value="1" checked>
+                <label for="r1" class="label">1</label>
+                <input type="radio" name="rating_comfort" id="r2" value="2">
+                <label for="r2" class="label">2</label>
+                <input type="radio" name="rating_comfort" id="r3" value="3">
+                <label for="r3" class="label">3</label>
+                <input type="radio" name="rating_comfort" id="r4" value="4">
+                <label for="r4" class="label">4</label>
+                <input type="radio" name="rating_comfort" id="r5" value="5">
+                <label for="r5" class="label">5</label>
+                <input type="radio" name="rating_comfort" id="r6" value="6">
+                <label for="r6" class="label">6</label>
+                <input type="radio" name="rating_comfort" id="r7" value="7">
+                <label for="r7" class="label">7</label>
+                <input type="radio" name="rating_comfort" id="r8" value="8">
+                <label for="r8" class="label">8</label>
+                <input type="radio" name="rating_comfort" id="r9" value="9">
+                <label for="r9" class="label">9</label>
+                <input type="radio" name="rating_comfort" id="r10" value="10">
+                <label for="r10" class="label">10</label>
+            </div>
+        </div>
+        <div class="field rating-price-quality">
+            <label class="label" for="rating-price-quality"><span>Rating Price/Quality</span></label>
+            <div class="control">
+                <input type="radio" name="rating_price_quality" id="r1" value="1" checked>
+                <label for="r1" class="label">1</label>
+                <input type="radio" name="rating_price_quality" id="r2" value="2">
+                <label for="r2" class="label">2</label>
+                <input type="radio" name="rating_price_quality" id="r3" value="3">
+                <label for="r3" class="label">3</label>
+                <input type="radio" name="rating_price_quality" id="r4" value="4">
+                <label for="r4" class="label">4</label>
+                <input type="radio" name="rating_price_quality" id="r5" value="5">
+                <label for="r5" class="label">5</label>
+                <input type="radio" name="rating_price_quality" id="r6" value="6">
+                <label for="r6" class="label">6</label>
+                <input type="radio" name="rating_price_quality" id="r7" value="7">
+                <label for="r7" class="label">7</label>
+                <input type="radio" name="rating_price_quality" id="r8" value="8">
+                <label for="r8" class="label">8</label>
+                <input type="radio" name="rating_price_quality" id="r9" value="9">
+                <label for="r9" class="label">9</label>
+                <input type="radio" name="rating_price_quality" id="r10" value="10">
+                <label for="r10" class="label">10</label>
+            </div>
+        </div>
+        <div class="field review-content">
+            <label class="label" for="review-content"><span>Text</span></label>
+            <div class="control">
+                <textarea name="review_content" cols="5" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="field review-user">
+            <div class="control">
+                <input type="hidden" name="review_user" value="<?php echo $block->getCustomer(); ?>">
+            </div>
+        </div>
+        <div class="field review-product">
+            <div class="control">
+                <input type="hidden" name="review_product" value="<?php echo $block->getProductName(); ?>">
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" title="Submit" class="action submit primary">
+                <span>Submit</span>
+            </button>
+        </div>
+    </div>
+</form>

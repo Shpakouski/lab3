@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route frontName="customer" id="customer">
+            <module name="Shpakouski_Review"/>
+        </route>
+        <route frontName="goods" id="goods">
+            <module name="Shpakouski_Review"/>
+        </route>
+        <route frontName="handler" id="handler">
+            <module name="Shpakouski_Review"/>
+        </route>
+    </router>
+</config>

@@ -1,0 +1,20 @@
+<?php foreach ($block->getReviews() as $review): ?>
+<div>
+    <h5>Text Review</h5>
+    <div>
+        <?php echo $review->getReviewContent(); ?>
+    </div>
+    <h5>Rating Comfort</h5>
+    <div>
+        <?php echo $review->getRatingComfort(); ?>
+    </div>
+    <h5>Rating Price/Quality</h5>
+    <div>
+        <?php echo $review->getRatingPriceQuality(); ?>
+    </div>
+    <hr>
+    <hr>
+    </br>
+    </br>
+    <?php endforeach; ?>
+</div>

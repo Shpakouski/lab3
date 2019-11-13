@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.details">
+            <block as="OUR-REVIEWS" class="Shpakouski\Review\Block\Product\Review" name="herviews.tab"
+                   template="Shpakouski_Review::product/review.phtml" group="detailed_info" cacheable="false">
+                <arguments>
+                    <argument name="sort_order" xsi:type="string">50</argument>
+                    <argument name="title" translate="true" xsi:type="string">RRReviews</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

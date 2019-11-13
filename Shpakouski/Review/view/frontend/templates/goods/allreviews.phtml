@@ -1,0 +1,30 @@
+<?php $count = 0;
+$param = $block->getRequest()->getParam('param');
+$data = $block->getReviewsForProduct();
+foreach ($data as $review):?>
+    <?php if ($review['review_product'] == $param): ?>
+        <div>
+            <h5>Text Review</h5>
+            <div>
+                <?php echo $review['review_content']; ?>
+            </div>
+            <h5>Rating Comfort</h5>
+            <div>
+                <?php echo $review['rating_comfort']; ?>
+            </div>
+            <h5>Rating Price/Quality</h5>
+            <div>
+                <?php echo $review['rating_price_quality']; ?>
+            </div>
+            <hr>
+            <hr>
+        </div>
+        <?php $count++; ?>
+    <?php
+    endif; ?>
+<?php
+endforeach; ?>
+<?php if ($count == 0) {
+    echo 'Нету отзывов на этот товар!';
+} ?>
+
